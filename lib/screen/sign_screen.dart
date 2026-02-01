@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:habitly/screen/register_screen.dart';
 
 class SignScreen extends StatefulWidget {
   const SignScreen({super.key});
@@ -26,7 +27,20 @@ class _SignScreenState extends State<SignScreen> {
                     style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(height: 10),
-                  Text("Create one here!", style: TextStyle(fontSize: 16)),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const RegisterScreen(),
+                        ),
+                      );
+                    },
+                    child: Text(
+                      "Create one here !",
+                      style: TextStyle(color: Colors.black, fontSize: 18),
+                    ),
+                  ),
                   SizedBox(height: 20),
                   TextFormField(
                     decoration: InputDecoration(
